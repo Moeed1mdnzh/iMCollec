@@ -2,6 +2,7 @@ import cv2
 import argparse 
 import numpy as np 
 from logger import Logger 
+from collector import Collect
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-n", "--name", default="img", type=str, help="Base name of the images")
@@ -30,5 +31,6 @@ def preprocess_args(args):
 	return args
 
 args = preprocess_args(args)
-print(args["resolution"])
-
+collector = Collect(args["name"], args["classes"],
+					 args["steps"], args["space"], args["resolution"])
+collector.collect()

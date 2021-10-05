@@ -2,22 +2,22 @@ import time
 
 class Logger:
 	base = "[INFO]: "
-	def webcam_access(self, access : bool):
-		if not access:
+	def webcam_access(self, access: bool):
+		if access:
 			print(f"{self.base}Could not access your webcam properly, Make sure you have a webcam set on your machine")
 			self.exit()
 		else:
 			print(f"{self.base}Webcam is now on")
 
-	def invalid_class(self, classes : int):
+	def invalid_class(self, classes: int):
 		 print(f"{self.base}Invalid number of classes -> {classes}")
 		 self.exit()
 
-	def invalid_step(self, step : int):
+	def invalid_step(self, step: int):
 		print(f"{self.base}Invalid number of steps -> {step}")
 		self.exit()
 
-	def invalid_space(self, space : int):
+	def invalid_space(self, space: int):
 		print(f"{self.base}Invalid number for space -> {space}")
 		self.exit()
 
