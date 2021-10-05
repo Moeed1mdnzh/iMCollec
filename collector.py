@@ -27,13 +27,13 @@ class Webcam:
 		self.cam.release()
 
 class Collect:
-	def __init__(self, base_name : str, classes : int, step : int,
-				gray : bool, res : tuple):
+	def __init__(self, base_name : str, classes : int, steps : int,
+				space : bool, res : tuple):
 		self.cam = Webcam()
 		self.base_name = base_name
 		self.classes = classes 
-		self.step = step 
-		self.gray = gray  
+		self.steps = step 
+		self.space = space
 		self.res = res
 
 	def to_gray(self, permission):
@@ -46,9 +46,8 @@ class Collect:
 		while True:
 			self.cam.on()
 			frame = self.cam.get_frame()
+			
 			self.cam.show(frame)
-
-		
 
 def save(image : np.ndarray):
 	pass
