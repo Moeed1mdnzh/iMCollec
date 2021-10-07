@@ -35,13 +35,13 @@ class Logger:
 
     def display_fname(self, frame: np.ndarray, event: str,
                       name: str, color_mode: tuple):
-        cv2.rectangle(frame, (5, 0), (400, 50), (10, 10, 10), -1, cv2.LINE_AA)
+        cv2.rectangle(frame, (0, 0), (400, 50), (10, 10, 10), -1, cv2.LINE_AA)
         cv2.putText(frame, f"{event}: {name}", (10, 30),
                     cv2.FONT_HERSHEY_COMPLEX, 0.7, color_mode, 2)
         return frame
 
     def display_buttons(self, frame):
-        cv2.rectangle(frame, (5, 50), (230, 240),
+        cv2.rectangle(frame, (0, 50), (230, 240),
                       (10, 10, 10), -1, cv2.LINE_AA)
         cv2.putText(frame, "C -> Capture", (10, 80),
                     cv2.FONT_HERSHEY_TRIPLEX, 0.9, (30, 180, 30), 2)

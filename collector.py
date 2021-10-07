@@ -10,12 +10,13 @@ class Webcam:
         self.cam = None
 
     def on(self):
-        self.cam = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+        # self.cam = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+        self.cam = cv2.VideoCapture(0)
         frame = self.cam.read()[1]
         access = 0
-        if frame is not None:
+        if frame is None:
             access = 1
-        self.logger.webcam_access(0)
+        self.logger.webcam_access(access)
 
     def get_frame(self):
         frame = self.cam.read()[1]
@@ -23,6 +24,7 @@ class Webcam:
 
     def show(self, frame: np.ndarray):
         cv2.imshow("Frame", frame)
+
         return cv2.waitKey(25)
 
     def off(self):
